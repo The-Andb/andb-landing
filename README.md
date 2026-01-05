@@ -6,7 +6,7 @@ It is designed to be a lightweight, high-performance static site hosting:
 
 - 🚀 Product Features Showcase
 - 🖼️ Application Screenshots (Dynamic 3D Carousel)
-- 📥 Official Download Links for macOS (and soon Windows)
+- 📥 Official Download Links (Coming Soon)
 - 🌓 Dark/Light Mode previews
 
 ## � Key Links
