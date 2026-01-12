@@ -6,11 +6,12 @@ It is designed to be a lightweight, high-performance static site hosting:
 
 - 🚀 Product Features Showcase
 - 🖼️ Application Screenshots (Dynamic 3D Carousel)
-- 📥 Official Download Links (Coming Soon)
+- 📥 Official Download Links (v2.1.1 Live)
 - 🌓 Dark/Light Mode previews
 
 ## Key Links
 
+- **Official Repository**: [The-Andb/andb](https://github.com/The-Andb/andb)
 - **Andb Core**: [The-Andb/andb-core](https://github.com/The-Andb/andb-core)
 
 ## 🛠️ Development
