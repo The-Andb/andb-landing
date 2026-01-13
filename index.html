@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -214,12 +215,13 @@
   <nav class="relative z-50 w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
     <div class="flex items-center space-x-3">
       <div
-        class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg transform transition hover:rotate-6">
-        <i data-lucide="database" class="w-6 h-6 text-white"></i>
+        class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg transform transition hover:rotate-6 overflow-hidden">
+        <img src="assets/favicon.png" alt="The Andb Logo" class="w-7 h-7 object-contain">
       </div>
       <span
-        class="text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 dark-mode-text">Andb</span>
-      <span class="text-2xl font-bold tracking-tight text-slate-900 light-mode-text hidden">Andb</span>
+        class="text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 dark-mode-text">The
+        Andb</span>
+      <span class="text-2xl font-bold tracking-tight text-slate-900 light-mode-text hidden">The Andb</span>
     </div>
     <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300 light-text-slate-600">
       <a href="#features"
@@ -227,12 +229,12 @@
         Features
         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
       </a>
-      <a href="#download"
+      <a href="guide.html"
         class="hover:text-white dark:hover:text-white light:hover:text-black transition-colors relative group">
-        Download
+        Guide
         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
       </a>
-      <a href="https://github.com/The-Andb/andb-core"
+      <a href="https://github.com/The-Andb/andb"
         class="hover:text-white dark:hover:text-white light:hover:text-black transition-colors relative group">
         GitHub
         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
@@ -288,7 +290,18 @@
       </a>
     </div>
 
-    <div class="text-sm text-slate-500 mb-16">
+    <div class="mb-10">
+      <a href="guide.html"
+        class="text-sm text-slate-400 hover:text-indigo-400 transition-colors flex items-center justify-center gap-2 group">
+        <i data-lucide="help-circle"
+          class="w-4 h-4 text-indigo-500/50 group-hover:text-indigo-500 transition-colors"></i>
+        First time using The Andb? <span
+          class="underline underline-offset-4 decoration-indigo-500/30 group-hover:decoration-indigo-500">View Setup
+          Guide</span>
+      </a>
+    </div>
+
+    <div class="text-sm text-slate-500 mb-8">
       <span
         class="inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-800/50 light:bg-white border border-slate-700/50 light:border-slate-200 shadow-sm">
         Requires macOS 11.0+ • Apple Silicon <i data-lucide="cpu" class="w-3 h-3"></i>
@@ -298,290 +311,416 @@
       </div>
     </div>
 
-    <!-- INTERACTIVE DEMO SECTION -->
-    <div class="w-full max-w-5xl mx-auto mb-32 relative px-4 group perspective-container">
-
-      <!-- Blob behind -->
+    <!-- Troubleshooting macOS Section -->
+    <div
+      class="max-w-2xl mx-auto mb-20 px-8 py-6 rounded-3xl bg-slate-900/50 border border-slate-700/50 backdrop-blur-xl text-left relative overflow-hidden group">
+      <!-- Glow effect -->
       <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-r from-indigo-500/20 to-purple-500/20 blur-[100px] rounded-full">
+        class="absolute -top-24 -right-24 w-48 h-48 bg-amber-500/10 blur-[60px] rounded-full group-hover:bg-amber-500/20 transition-colors duration-700">
       </div>
 
-      <!-- App Window -->
+      <div class="flex items-start gap-6 relative z-10">
+        <div class="p-3 bg-amber-500/10 rounded-2xl shrink-0 border border-amber-500/20 shadow-lg shadow-amber-500/5">
+          <i data-lucide="shield-alert" class="w-6 h-6 text-amber-500"></i>
+        </div>
+        <div class="flex-1">
+          <h4 class="text-slate-100 font-bold text-lg mb-1 flex items-center gap-2">
+            MacOS "App is damaged" fix
+          </h4>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4 font-light">
+            Seeing a "damaged" error? This is a common macOS Gatekeeper protection for non-notarized apps.
+            To fix it, open <span class="text-indigo-400 font-medium">Terminal.app</span> and run:
+          </p>
+
+          <div class="relative group/code">
+            <div
+              class="bg-black/60 rounded-xl p-4 font-mono text-sm inline-flex w-full items-center justify-between border border-white/5 group-hover/code:border-indigo-500/30 transition-all shadow-inner">
+              <code class="text-indigo-300 break-all pr-4">xattr -cr /Applications/The\ Andb.app</code>
+              <button onclick="copyFixCommand(this)"
+                class="shrink-0 p-2 hover:bg-white/10 rounded-lg transition-all active:scale-95 text-slate-400 hover:text-white relative">
+                <i data-lucide="copy" class="w-4 h-4" id="copy-icon"></i>
+                <span id="copy-text"
+                  class="absolute -top-10 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-[10px] px-2 py-1 rounded opacity-0 pointer-events-none transition-all">Copied!</span>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="mt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 border-t border-white/5">
+            <p class="text-[11px] text-slate-500 flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-3 h-3 text-green-500/50"></i>
+              This removes the quarantine attribute and allows the app to launch normally.
+            </p>
+            <a href="guide.html"
+              class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 rounded-xl text-sm font-semibold transition-all border border-indigo-500/20 hover:border-indigo-500/40 group/guide">
+              View full setup guide
+              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/guide:translate-x-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <script>
+    function copyFixCommand(btn) {
+      const cmd = "xattr -cr /Applications/The\\ Andb.app";
+      navigator.clipboard.writeText(cmd);
+
+      const tooltip = btn.querySelector('#copy-text');
+      const icon = btn.querySelector('#copy-icon');
+
+      tooltip.style.opacity = '1';
+      tooltip.style.top = '-45px';
+      icon.classList.add('text-green-400');
+
+      setTimeout(() => {
+        tooltip.style.opacity = '0';
+        tooltip.style.top = '-40px';
+        icon.classList.remove('text-green-400');
+      }, 2000);
+    }
+  </script>
+
+  <!-- OUR STORY SECTION -->
+  <section class="max-w-6xl mx-auto px-6 mb-32 mt-20 relative">
+    <div class="absolute -top-40 -left-20 w-80 h-80 bg-indigo-500/10 blur-[100px] rounded-full"></div>
+
+    <div class="glass-card rounded-[3rem] p-8 md:p-16 border-indigo-500/20 relative overflow-hidden group">
+      <!-- Decoration -->
       <div
-        class="relative bg-[#0f172a] rounded-xl border border-slate-700/50 shadow-2xl overflow-hidden transform transition-all hover:scale-[1.01] duration-500 flex flex-col h-[500px]">
+        class="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-indigo-500 to-purple-600 opacity-5 blur-[40px] rounded-full">
+      </div>
 
-        <!-- Window Ribbon/Header -->
-        <div class="h-10 bg-slate-900 border-b border-slate-800 flex items-center px-4 justify-between shrink-0">
-          <div class="flex items-center gap-2">
-            <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
-            <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
-            <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+      <div class="flex flex-col lg:flex-row gap-16 items-start">
+        <!-- Left: Profile & Badge -->
+        <div class="shrink-0 w-full lg:w-auto text-center lg:text-left">
+          <div
+            class="relative inline-block w-40 h-40 rounded-[2.5rem] bg-gradient-to-br from-indigo-500 to-purple-600 p-1 mb-8 rotate-3 group-hover:rotate-6 transition-transform duration-500 shadow-2xl shadow-indigo-500/20 mx-auto">
+            <div class="w-full h-full rounded-[2.25rem] bg-[#0f172a] flex items-center justify-center overflow-hidden">
+              <img src="assets/favicon.png" alt="The Andb Icon" class="w-20 h-20 object-contain">
+            </div>
+            <!-- Floating Badge -->
+            <div
+              class="absolute -bottom-4 -right-4 bg-indigo-600 text-white text-[10px] font-black px-3 py-1.5 rounded-xl uppercase tracking-widest shadow-xl">
+              Creator
+            </div>
           </div>
-          <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
-            <span class="flex items-center gap-1 text-indigo-400"><i data-lucide="database" class="w-3 h-3"></i>
-              production</span>
-            <i data-lucide="arrow-right" class="w-3 h-3 opacity-50"></i>
-            <span class="flex items-center gap-1 text-green-400"><i data-lucide="server" class="w-3 h-3"></i>
-              staging</span>
+          <h3 class="text-3xl font-black text-white mb-1">Ph4n4n</h3>
+          <p class="text-indigo-400 font-medium tracking-wide">Back-end Developer</p>
+
+          <div class="mt-8 pt-8 border-t border-white/5 flex justify-center lg:justify-start gap-4">
+            <a href="https://github.com/The-Andb"
+              class="p-3 bg-white/5 rounded-2xl hover:bg-white/10 transition-all hover:scale-110">
+              <i data-lucide="github" class="w-5 h-5 text-slate-400"></i>
+            </a>
+            <a href="https://linkedin.com"
+              class="p-3 bg-white/5 rounded-2xl hover:bg-white/10 transition-all hover:scale-110">
+              <i data-lucide="linkedin" class="w-5 h-5 text-slate-400"></i>
+            </a>
           </div>
-
-
-          <div class="w-16"></div> <!-- spacer -->
         </div>
 
-        <!-- Toolbar -->
-        <div class="h-12 bg-slate-800/50 border-b border-slate-700/50 flex items-center px-4 justify-between shrink-0">
-          <div class="flex items-center gap-4">
-            <h2 class="text-sm font-bold text-slate-200 flex items-center gap-2"><i data-lucide="git-merge"
-                class="w-4 h-4 text-indigo-400"></i> Compare Results</h2>
-            <span
-              class="px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 text-[10px] font-bold border border-indigo-500/30">1
-              Change Pending</span>
+        <!-- Right: Narrative -->
+        <div class="flex-1">
+          <div
+            class="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-6">
+            The Vision
+          </div>
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-8 leading-[1.15]">
+            "Every deployment feels risky. <br />
+            <span class="text-indigo-400">I wanted to change that.</span>"
+          </h2>
+
+          <div class="space-y-6 text-slate-400 light:text-slate-600 text-lg leading-relaxed font-light text-left">
+            <p>
+              After years as a backend developer, I kept hitting the same wall:
+              <span class="text-slate-200 light:text-slate-800 font-medium">databases are hard to version.</span>
+              Manually comparing schemas, missing columns, changed data types, silent production breaks...
+              the risks only grow as your project evolves.
+            </p>
+            <p>
+              I realized that while code has Git and CI/CD, the database side was still manual and fragile.
+              I asked myself: <span class="italic text-indigo-300">"Can I build a version control tool for DDL, like
+                Git does for code?"</span>
+            </p>
+            <p>
+              What started as a small CLI tool to solve my own pains has evolved into
+              <span class="text-white light:text-slate-900 font-bold">The Andb</span>.
+              It’s a developer-first tool built to restore trust and visibility in your migrations.
+            </p>
           </div>
 
-          <button id="demo-migrate-btn"
-            class="flex items-center gap-2 px-4 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-all shadow-lg shadow-indigo-500/20 active:scale-95 group/btn relative overflow-hidden">
-            <i data-lucide="zap" class="w-3 h-3 fill-current"></i>
-            <span id="demo-btn-text">Migrate</span>
-            <!-- Loading Spinner (Hidden by default) -->
-            <div id="demo-btn-spinner" class="absolute inset-0 bg-indigo-600 flex items-center justify-center hidden">
-              <i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i>
+          <div class="mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <i data-lucide="quote" class="w-8 h-8 text-indigo-500/30"></i>
+              <p class="text-sm font-medium text-slate-500">2025 Milestone — From CLI only to a Solid UI</p>
             </div>
-          </button>
+            <i data-lucide="milestone" class="w-6 h-6 text-indigo-500/20"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE DEMO SECTION -->
+  <div class="w-full max-w-5xl mx-auto mb-32 relative px-4 group perspective-container">
+
+    <!-- Blob behind -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-r from-indigo-500/20 to-purple-500/20 blur-[100px] rounded-full">
+    </div>
+
+    <!-- App Window -->
+    <div
+      class="relative bg-[#0f172a] rounded-xl border border-slate-700/50 shadow-2xl overflow-hidden transform transition-all hover:scale-[1.01] duration-500 flex flex-col h-[500px]">
+
+      <!-- Window Ribbon/Header -->
+      <div class="h-10 bg-slate-900 border-b border-slate-800 flex items-center px-4 justify-between shrink-0">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+          <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+          <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+          <span class="flex items-center gap-1 text-indigo-400"><i data-lucide="database" class="w-3 h-3"></i>
+            production</span>
+          <i data-lucide="arrow-right" class="w-3 h-3 opacity-50"></i>
+          <span class="flex items-center gap-1 text-green-400"><i data-lucide="server" class="w-3 h-3"></i>
+            staging</span>
         </div>
 
-        <!-- Main Content (Columns) -->
-        <div class="flex flex-1 overflow-hidden font-mono text-xs">
 
-          <!-- Sidebar -->
-          <div class="w-48 bg-slate-900 border-r border-slate-800 flex flex-col py-2">
-            <div class="px-3 py-1 text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1">Tables</div>
-            <!-- Items -->
-            <div class="px-2 space-y-0.5">
-              <div
-                class="flex items-center justify-between px-2 py-2 rounded text-slate-400 hover:bg-slate-800/50 cursor-pointer">
-                <span class="flex items-center gap-2"><i data-lucide="table" class="w-3 h-3 opacity-50"></i>
-                  users</span>
-                <i data-lucide="check-circle-2" class="w-3 h-3 text-slate-600"></i>
-              </div>
-              <div
-                class="flex items-center justify-between px-2 py-2 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 cursor-pointer relative overflow-hidden">
-                <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-indigo-500"></div>
-                <span class="flex items-center gap-2"><i data-lucide="table" class="w-3 h-3"></i> orders</span>
-                <i id="demo-status-icon" data-lucide="alert-circle" class="w-3 h-3 text-amber-400"></i>
-              </div>
-              <div
-                class="flex items-center justify-between px-2 py-2 rounded text-slate-400 hover:bg-slate-800/50 cursor-pointer">
-                <span class="flex items-center gap-2"><i data-lucide="table" class="w-3 h-3 opacity-50"></i>
-                  products</span>
-                <i data-lucide="check-circle-2" class="w-3 h-3 text-slate-600"></i>
-              </div>
+        <div class="w-16"></div> <!-- spacer -->
+      </div>
+
+      <!-- Toolbar -->
+      <div class="h-12 bg-slate-800/50 border-b border-slate-700/50 flex items-center px-4 justify-between shrink-0">
+        <div class="flex items-center gap-4">
+          <h2 class="text-sm font-bold text-slate-200 flex items-center gap-2"><i data-lucide="git-merge"
+              class="w-4 h-4 text-indigo-400"></i> Compare Results</h2>
+          <span
+            class="px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 text-[10px] font-bold border border-indigo-500/30">1
+            Change Pending</span>
+        </div>
+
+        <button id="demo-migrate-btn"
+          class="flex items-center gap-2 px-4 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-all shadow-lg shadow-indigo-500/20 active:scale-95 group/btn relative overflow-hidden">
+          <i data-lucide="zap" class="w-3 h-3 fill-current"></i>
+          <span id="demo-btn-text">Migrate</span>
+          <!-- Loading Spinner (Hidden by default) -->
+          <div id="demo-btn-spinner" class="absolute inset-0 bg-indigo-600 flex items-center justify-center hidden">
+            <i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i>
+          </div>
+        </button>
+      </div>
+
+      <!-- Main Content (Columns) -->
+      <div class="flex flex-1 overflow-hidden font-mono text-xs">
+
+        <!-- Sidebar -->
+        <div class="w-48 bg-slate-900 border-r border-slate-800 flex flex-col py-2">
+          <div class="px-3 py-1 text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1">Tables</div>
+          <!-- Items -->
+          <div class="px-2 space-y-0.5">
+            <div
+              class="flex items-center justify-between px-2 py-2 rounded text-slate-400 hover:bg-slate-800/50 cursor-pointer">
+              <span class="flex items-center gap-2"><i data-lucide="table" class="w-3 h-3 opacity-50"></i>
+                users</span>
+              <i data-lucide="check-circle-2" class="w-3 h-3 text-slate-600"></i>
+            </div>
+            <div
+              class="flex items-center justify-between px-2 py-2 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 cursor-pointer relative overflow-hidden">
+              <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-indigo-500"></div>
+              <span class="flex items-center gap-2"><i data-lucide="table" class="w-3 h-3"></i> orders</span>
+              <i id="demo-status-icon" data-lucide="alert-circle" class="w-3 h-3 text-amber-400"></i>
+            </div>
+            <div
+              class="flex items-center justify-between px-2 py-2 rounded text-slate-400 hover:bg-slate-800/50 cursor-pointer">
+              <span class="flex items-center gap-2"><i data-lucide="table" class="w-3 h-3 opacity-50"></i>
+                products</span>
+              <i data-lucide="check-circle-2" class="w-3 h-3 text-slate-600"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diff View -->
+        <div class="flex-1 flex flex-col bg-[#0b1120] relative">
+          <!-- Tabs -->
+          <div class="h-8 flex border-b border-slate-800">
+            <div
+              class="px-4 py-2 border-r border-slate-800 text-indigo-400 bg-slate-900/50 flex items-center gap-2 text-[10px] font-bold">
+              <i data-lucide="file-code" class="w-3 h-3"></i> orders.sql
             </div>
           </div>
 
-          <!-- Diff View -->
-          <div class="flex-1 flex flex-col bg-[#0b1120] relative">
-            <!-- Tabs -->
-            <div class="h-8 flex border-b border-slate-800">
-              <div
-                class="px-4 py-2 border-r border-slate-800 text-indigo-400 bg-slate-900/50 flex items-center gap-2 text-[10px] font-bold">
-                <i data-lucide="file-code" class="w-3 h-3"></i> orders.sql
-              </div>
+          <!-- Code Area -->
+          <div class="flex-1 flex p-4 gap-4 overflow-hidden relative">
+
+            <!-- Line Numbers -->
+            <div class="flex flex-col text-slate-600 text-right select-none space-y-1">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
             </div>
 
-            <!-- Code Area -->
-            <div class="flex-1 flex p-4 gap-4 overflow-hidden relative">
-
-              <!-- Line Numbers -->
-              <div class="flex flex-col text-slate-600 text-right select-none space-y-1">
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-                <div>6</div>
+            <!-- Code Content -->
+            <div class="flex-1 font-mono text-slate-300 space-y-1 relative">
+              <div class="text-purple-400">CREATE TABLE <span class="text-yellow-200">orders</span> (</div>
+              <div class="pl-4">id <span class="text-orange-300">SERIAL PRIMARY KEY</span>,</div>
+              <div class="pl-4">user_id <span class="text-orange-300">INTEGER REFERENCES</span> users(id),</div>
+              <div class="pl-4 flex items-center">
+                <span>total_amount <span class="text-orange-300">DECIMAL(10,2)</span>,</span>
               </div>
+              <!-- Diff Line -->
+              <div id="demo-diff-line" class="pl-4 relative transition-all duration-700">
+                <div
+                  class="absolute -left-8 -right-4 top-0 bottom-0 bg-green-500/20 border-l-2 border-green-500 opacity-100 transition-opacity duration-500"
+                  id="diff-highlight"></div>
+                <span class="text-green-400">+ status <span class="text-orange-300">VARCHAR(50) DEFAULT</span>
+                  'pending'</span>
+              </div>
+              <div class="text-purple-400">);</div>
 
-              <!-- Code Content -->
-              <div class="flex-1 font-mono text-slate-300 space-y-1 relative">
-                <div class="text-purple-400">CREATE TABLE <span class="text-yellow-200">orders</span> (</div>
-                <div class="pl-4">id <span class="text-orange-300">SERIAL PRIMARY KEY</span>,</div>
-                <div class="pl-4">user_id <span class="text-orange-300">INTEGER REFERENCES</span> users(id),</div>
-                <div class="pl-4 flex items-center">
-                  <span>total_amount <span class="text-orange-300">DECIMAL(10,2)</span>,</span>
-                </div>
-                <!-- Diff Line -->
-                <div id="demo-diff-line" class="pl-4 relative transition-all duration-700">
+              <!-- Success Overlay -->
+              <div id="demo-success-overlay"
+                class="absolute inset-0 bg-[#0b1120]/90 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500 z-10">
+                <div class="text-center transform transition-transform scale-90" id="demo-success-msg">
                   <div
-                    class="absolute -left-8 -right-4 top-0 bottom-0 bg-green-500/20 border-l-2 border-green-500 opacity-100 transition-opacity duration-500"
-                    id="diff-highlight"></div>
-                  <span class="text-green-400">+ status <span class="text-orange-300">VARCHAR(50) DEFAULT</span>
-                    'pending'</span>
-                </div>
-                <div class="text-purple-400">);</div>
-
-                <!-- Success Overlay -->
-                <div id="demo-success-overlay"
-                  class="absolute inset-0 bg-[#0b1120]/90 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500 z-10">
-                  <div class="text-center transform transition-transform scale-90" id="demo-success-msg">
-                    <div
-                      class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-500/30">
-                      <i data-lucide="check" class="w-8 h-8 text-green-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Synced Successfully!</h3>
-                    <p class="text-slate-400">Schema is now identical.</p>
+                    class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-500/30">
+                    <i data-lucide="check" class="w-8 h-8 text-green-400"></i>
                   </div>
+                  <h3 class="text-lg font-bold text-white mb-1">Synced Successfully!</h3>
+                  <p class="text-slate-400">Schema is now identical.</p>
                 </div>
-
               </div>
+
             </div>
           </div>
         </div>
-
-        <!-- Simulate Cursor -->
-        <div id="demo-cursor"
-          class="absolute w-6 h-6 z-50 pointer-events-none transition-all duration-700 ease-in-out drop-shadow-xl"
-          style="top: 100px; left: 100px;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19169L11.7841 12.3673H5.65376Z"
-              fill="white" stroke="black" stroke-width="1" />
-          </svg>
-        </div>
-
       </div>
+
+      <!-- Simulate Cursor -->
+      <div id="demo-cursor"
+        class="absolute w-6 h-6 z-50 pointer-events-none transition-all duration-700 ease-in-out drop-shadow-xl"
+        style="top: 100px; left: 100px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19169L11.7841 12.3673H5.65376Z"
+            fill="white" stroke="black" stroke-width="1" />
+        </svg>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3D CAROUSEL SECTION -->
+  <div class="w-full max-w-[1600px] mx-auto relative perspective-container mt-10 px-4">
+
+    <!-- CONTROLS: Large Side Carets -->
+    <button onclick="moveLeft()"
+      class="nav-button absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-50 p-4 rounded-full bg-slate-900/50 backdrop-blur-md border border-slate-700/50 text-white shadow-2xl group cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500">
+      <i data-lucide="chevron-left" class="w-8 h-8 md:w-10 md:h-10 group-hover:-translate-x-1 transition-transform"></i>
+    </button>
+
+    <button onclick="moveRight()"
+      class="nav-button absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-50 p-4 rounded-full bg-slate-900/50 backdrop-blur-md border border-slate-700/50 text-white shadow-2xl group cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500">
+      <i data-lucide="chevron-right" class="w-8 h-8 md:w-10 md:h-10 group-hover:translate-x-1 transition-transform"></i>
+    </button>
+
+    <!-- TRACK -->
+    <div id="carousel-track" class="carousel-track">
+      <!-- Items injected via JS -->
     </div>
 
-    <!-- 3D CAROUSEL SECTION -->
-    <div class="w-full max-w-[1600px] mx-auto relative perspective-container mt-10 px-4">
+    <!-- DOTS -->
+    <div id="carousel-dots" class="flex justify-center gap-3 mt-10">
+      <!-- Dots injected via JS -->
+    </div>
+  </div>
 
-      <!-- CONTROLS: Large Side Carets -->
-      <button onclick="moveLeft()"
-        class="nav-button absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-50 p-4 rounded-full bg-slate-900/50 backdrop-blur-md border border-slate-700/50 text-white shadow-2xl group cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500">
-        <i data-lucide="chevron-left"
-          class="w-8 h-8 md:w-10 md:h-10 group-hover:-translate-x-1 transition-transform"></i>
-      </button>
 
-      <button onclick="moveRight()"
-        class="nav-button absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-50 p-4 rounded-full bg-slate-900/50 backdrop-blur-md border border-slate-700/50 text-white shadow-2xl group cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500">
-        <i data-lucide="chevron-right"
-          class="w-8 h-8 md:w-10 md:h-10 group-hover:translate-x-1 transition-transform"></i>
-      </button>
-
-      <!-- TRACK -->
-      <div id="carousel-track" class="carousel-track">
-        <!-- Items injected via JS -->
-      </div>
-
-      <!-- DOTS -->
-      <div id="carousel-dots" class="flex justify-center gap-3 mt-10">
-        <!-- Dots injected via JS -->
-      </div>
+  <!-- PROJECT MILESTONES SECTION -->
+  <div class="w-full max-w-4xl mx-auto mt-32 px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-4">The Journey</h2>
+      <p class="text-slate-400 light-text-slate-600">From a frustrated backend developer's idea to a complete
+        ecosystem.</p>
     </div>
 
+    <div class="relative border-l border-slate-800 light:border-slate-300 ml-4 md:ml-10 space-y-16">
 
-    <!-- UPDATES / CHANGELOG SECTION -->
-    <div class="w-full max-w-4xl mx-auto mt-32 px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-4">What's New</h2>
-        <p class="text-slate-400 light-text-slate-600">Track our journey to redefine database management.</p>
+      <!-- Milestone: Solid UI (Now) -->
+      <div class="relative pl-8 group">
+        <div
+          class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-indigo-500 ring-4 ring-slate-900 light:ring-white group-hover:scale-150 transition-transform">
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-10 sm:items-baseline">
+          <div class="min-w-[120px] text-xs font-mono text-indigo-400 font-bold uppercase tracking-wider">Mid 2025
+          </div>
+          <div>
+            <h3
+              class="text-xl font-bold text-white light:text-slate-800 mb-2 group-hover:text-indigo-400 transition-colors">
+              The "Solid UI" Evolution</h3>
+            <p class="text-slate-400 light-text-slate-600 text-sm leading-relaxed mb-4">
+              Moving beyond the CLI. Developed a high-performance desktop interface with <b>SQLite-backed</b> metadata
+              storage,
+              Master Password protection, and real-time schema visualization.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-2 py-1 rounded bg-indigo-500/10 text-indigo-400 text-[10px] font-bold border border-indigo-500/20">#DesktopApp</span>
+              <span
+                class="px-2 py-1 rounded bg-indigo-500/10 text-indigo-400 text-[10px] font-bold border border-indigo-500/20">#SQLite</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="relative border-l border-slate-800 light:border-slate-300 ml-4 md:ml-10 space-y-12">
-
-        <!-- Item 0 (NEW) -->
-        <div class="relative pl-8 group">
-          <!-- Dot -->
-          <div
-            class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-slate-900 light:ring-white group-hover:scale-150 transition-transform">
+      <!-- Milestone: Core CLI -->
+      <div class="relative pl-8 group">
+        <div
+          class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-slate-600 ring-4 ring-slate-900 light:ring-white group-hover:bg-indigo-500 transition-colors">
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-10 sm:items-baseline">
+          <div class="min-w-[120px] text-xs font-mono text-slate-500 font-bold uppercase tracking-wider">Early 2025
           </div>
-          <!-- Content -->
-          <div class="flex flex-col sm:flex-row gap-4 sm:gap-10 sm:items-baseline">
-            <div class="min-w-[100px] text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">v2.1.0
-            </div>
-            <div>
-              <h3
-                class="text-xl font-bold text-slate-200 light:text-slate-800 mb-2 group-hover:text-emerald-400 transition-colors">
-                Security & Mobility Update</h3>
-              <p class="text-slate-400 light-text-slate-600 text-sm leading-relaxed mb-4">
-                Introducing <b>Master Password</b> protected backups for secure portability.
-                Experience seamless <b>Global Connection Templates</b> with automatic <b>Pull-Sync</b> across projects
-                and rapid <b>Connectivity Health Checks</b>.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-bold border border-emerald-500/20">#security</span>
-                <span
-                  class="px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-bold border border-emerald-500/20">#portability</span>
-                <span
-                  class="px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-bold border border-emerald-500/20">#automation</span>
-              </div>
-            </div>
+          <div>
+            <h3 class="text-xl font-bold text-slate-200 light:text-slate-800 mb-2">andb-core: Atomic Logic</h3>
+            <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed">
+              The first working prototype. Built the atomic comparison engine and DDL export logic in Node.js.
+              Focus was 100% on stability and accuracy of generated migration scripts.
+            </p>
           </div>
         </div>
-
-        <!-- Item 1 -->
-        <div class="relative pl-8 group">
-          <!-- Dot -->
-          <div
-            class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-indigo-500 ring-4 ring-slate-900 light:ring-white group-hover:scale-150 transition-transform">
-          </div>
-          <!-- Content -->
-          <div class="flex flex-col sm:flex-row gap-4 sm:gap-10 sm:items-baseline">
-            <div class="min-w-[100px] text-xs font-mono text-indigo-400 font-bold uppercase tracking-wider">v2.0.0</div>
-            <div>
-              <h3
-                class="text-xl font-bold text-slate-200 light:text-slate-800 mb-2 group-hover:text-indigo-400 transition-colors">
-                The "Solid Core" Update</h3>
-              <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed mb-4">
-                Complete architectural overhaul. Introducing <b>Atomic Comparison</b> for lightning-fast schema diffs,
-                dark mode support, and a unified dashboard experience.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-2 py-1 rounded bg-slate-800 light:bg-slate-200 text-slate-300 light:text-slate-700 text-[10px] font-bold border border-slate-700 light:border-slate-300">#performance</span>
-                <span
-                  class="px-2 py-1 rounded bg-slate-800 light:bg-slate-200 text-slate-300 light:text-slate-700 text-[10px] font-bold border border-slate-700 light:border-slate-300">#ui/ux</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="relative pl-8 group">
-          <div
-            class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-slate-600 ring-4 ring-slate-900 light:ring-white group-hover:bg-indigo-500 transition-colors">
-          </div>
-          <div class="flex flex-col sm:flex-row gap-4 sm:gap-10 sm:items-baseline">
-            <div class="min-w-[100px] text-xs font-mono text-slate-500 font-bold uppercase tracking-wider">v1.8.0</div>
-            <div>
-              <h3 class="text-xl font-bold text-slate-200 light:text-slate-800 mb-2">Smart SQL Generation</h3>
-              <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed">
-                Added intelligent dependency resolution for generated migration scripts.
-                Now handles circular dependencies automatically during export.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="relative pl-8 group">
-          <div
-            class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-slate-600 ring-4 ring-slate-900 light:ring-white group-hover:bg-indigo-500 transition-colors">
-          </div>
-          <div class="flex flex-col sm:flex-row gap-4 sm:gap-10 sm:items-baseline">
-            <div class="min-w-[100px] text-xs font-mono text-slate-500 font-bold uppercase tracking-wider">v1.0.0</div>
-            <div>
-              <h3 class="text-xl font-bold text-slate-200 light:text-slate-800 mb-2">Initial Release</h3>
-              <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed">
-                Launched Andb public beta. Basic connection management and schema comparison for PostgreSQL.
-              </p>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Milestone: The Spark -->
+      <div class="relative pl-8 group opacity-80">
+        <div
+          class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-900 light:ring-white group-hover:bg-indigo-500 transition-colors">
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-10 sm:items-baseline">
+          <div class="min-w-[120px] text-xs font-mono text-slate-600 font-bold uppercase tracking-wider">Late 2024
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-slate-400 light:text-slate-800 mb-2 italic">The Inspiration</h3>
+            <p class="text-slate-500 light:text-slate-600 text-sm leading-relaxed">
+              After one too many broken production deployments due to schema mismatches, the idea was born:
+              <span class="italic">"Code has Git. Why doesn't the database?"</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
+
+  </div>
+  </div>
+
   </main>
 
   <!-- Footer -->
