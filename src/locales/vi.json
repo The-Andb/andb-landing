@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "features": "Tính năng",
+    "architecture": "Kiến trúc",
+    "guide": "Hướng dẫn",
+    "roadmap": "Lộ trình"
+  },
+  "hero": {
+    "version": "v2.2.1 đã sẵn sàng",
+    "opensource": "Mã nguồn mở 100%",
+    "title_line1": "Database Migrations,",
+    "title_line2": "Tái định nghĩa.",
+    "subtitle": "Không cần gõ lệnh. Xem, so sánh và đồng bộ database dễ dàng.",
+    "download_mac": "Tải cho MacOS",
+    "download_portable": "Bản Portable",
+    "setup_guide": "Lần đầu sử dụng The Andb?",
+    "view_guide": "Xem hướng dẫn cài đặt",
+    "os_req": "Yêu cầu macOS 11.0+ • Apple Silicon",
+    "win_coming": "Phiên bản Windows sắp ra mắt"
+  },
+  "roadmap": {
+    "vision_badge": "Tầm nhìn 2026",
+    "title": "Kế hoạch tương lai",
+    "subtitle": "Biến The Andb thành công cụ chuyên nghiệp cho mọi người.",
+    "status_live": "Đã xong",
+    "phase1": {
+      "title": "Nền tảng",
+      "desc": "Ổn định. Tự động cập nhật. Dễ dùng."
+    },
+    "phase2": {
+      "title": "Nền tảng vững chắc",
+      "desc": "Làm chủ MySQL. Tối ưu Core engine.",
+      "date": "Th1 - Th2 2026"
+    },
+    "phase3": {
+      "title": "Thêm Database",
+      "desc": "Hỗ trợ PostgreSQL.",
+      "date": "Th2 - Th3 2026"
+    },
+    "phase4": {
+      "title": "Tính năng Pro",
+      "desc": "Bảo mật SSH, Safe Mode & Team Tools.",
+      "date": "Th3 2026+"
+    },
+    "focus_title": "Việc đang làm",
+    "focus": {
+      "pg_title": "Làm chủ MySQL",
+      "pg_desc": "Hỗ trợ các tính năng nâng cao của MySQL như Triggers, Events. Đảm bảo mọi thứ hoạt động hoàn hảo.",
+      "safe_title": "Core Engine",
+      "safe_desc": "Tái cấu trúc bộ lõi (Core). Chuẩn bị sẵn sàng để hỗ trợ mọi loại database trong tương lai."
+    },
+    "strategy": {
+      "title": "Kế hoạch của chúng tôi",
+      "comm_title": "Bản Miễn phí",
+      "comm_badge": "Free / MIT",
+      "comm_desc": "Core tool miễn phí. Hỗ trợ MySQL & Postgres. Dành cho mọi người.",
+      "pro_title": "Bản Pro",
+      "pro_badge": "Thu phí",
+      "pro_desc": "Tính năng nâng cao: SSH, Safe Mode, và công cụ nhóm."
+    },
+    "verified": "Xác nhận bởi Engineering Team: Th1 2026"
+  },
+  "arch": {
+    "title": "Thiết kế để tin cậy",
+    "subtitle": "Modular. Nhanh. Ổn định.",
+    "core_desc": "Bộ não trung tâm. Xử lý kết nối, so sánh và sinh script. Chạy ở mọi nơi.",
+    "cli_desc": "Tự động hóa. Tuyệt vời cho CI/CD.",
+    "gui_desc": "Cho con người. Đẹp, nhanh và dễ dùng."
+  },
+  "guide": {
+    "setup_link": "Lần đầu dùng The Andb?",
+    "view_guide": "Xem hướng dẫn",
+    "mac_fix_title": "Sửa lỗi \"App is damaged\" trên MacOS",
+    "mac_fix_desc": "Thấy lỗi \"damaged\"? Chuyện bình thường trên Mac với app mới. Code tụi mình Open Source, yên tâm nhé.",
+    "mac_fix_step": "Để sửa, mở app này và chạy lệnh:",
+    "mac_fix_note": "Lệnh này giúp app mở được bình thường.",
+    "full_guide_btn": "Xem hướng dẫn đầy đủ"
+  },
+  "demo": {
+    "title": "Xem Thực Tế",
+    "subtitle": "Trải nghiệm cách trực quan nhất để so sánh và đồng bộ database schemas.",
+    "placeholder_note": "Video đang được cập nhật..."
+  },
+  "story": {
+    "creator_badge": "Creator",
+    "role": "Lập trình viên Backend",
+    "vision_label": "Tầm nhìn",
+    "quote_start": "\"Mỗi khi deploy đều thấy run.",
+    "quote_highlight": "Tôi muốn thay đổi điều đó.",
+    "p1_start": "Sau nhiều năm làm backend, tôi cứ đụng phải một bức tường:",
+    "p1_highlight": "database rất khó quản lý version.",
+    "p1_end": "So sánh schema thủ công, thiếu cột, sai kiểu dữ liệu, deploy xong lỗi production... rủi ro cứ lớn dần theo dự án.",
+    "p2_start": "Code thì có Git với CI/CD, sao database vẫn cứ thủ công và mỏng manh thế? Tôi tự hỏi:",
+    "p2_quote": "\"Liệu mình có thể build một công cụ version control cho DDL, giống như Git cho code?\"",
+    "p3_start": "Từ một CLI tool nhỏ để giải quyết nỗi đau của chính mình, giờ nó đã thành",
+    "p3_end": "Đây là tool của dev, làm ra để bạn lấy lại niềm tin và sự rõ ràng khi migration.",
+    "milestone_note": "Cột mốc 2025 — Từ CLI lên Giao diện xịn"
+  },
+  "journey": {
+    "title": "Hành Trình",
+    "subtitle": "Từ ý tưởng của một dev backend đến một hệ sinh thái hoàn chỉnh.",
+    "m1_date": "Giữa 2025",
+    "m1_title": "Cuộc cách mạng \"GUI\"",
+    "m1_desc": "Không chỉ còn là CLI. Phát triển giao diện Desktop hiệu năng cao với SQLite, Bảo mật Master Password và Visualization thời gian thực.",
+    "m2_date": "Đầu 2025",
+    "m2_title": "andb-core: Atomic Logic",
+    "m2_desc": "Bản prototype đầu tiên. Xây dựng engine so sánh và export DDL bằng Node.js. Tập trung 100% vào sự ổn định.",
+    "m3_date": "Cuối 2024",
+    "m3_title": "Nguồn cảm hứng",
+    "m3_desc": "Sau quá nhiều lần deploy lỗi do lệch schema, ý tưởng ra đời:",
+    "m3_quote": "Code có Git. Sao Database lại không?"
+  }
+}
