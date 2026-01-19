@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 
-const { t } = useI18n()
 const activeIndex = ref(1) // Start at center
 const slides = [
   { img: '/screenshots/dashboard.png', label: 'Project Dashboard' },

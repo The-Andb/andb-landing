@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { Github, Quote, Milestone, CheckCircle } from 'lucide-vue-next'
+import { Github, Quote, Milestone } from 'lucide-vue-next'
 
 const { t } = useI18n()
 </script>

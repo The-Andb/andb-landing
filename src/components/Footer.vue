@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 import { Github, Twitter } from 'lucide-vue-next'
 
-const { t } = useI18n()
 const curYear = new Date().getFullYear()
 </script>
 
