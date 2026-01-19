@@ -77,7 +77,7 @@ onMounted(() => {
                 <Apple class="w-6 h-6 mr-3 fill-current" />
                 <div class="text-left">
                     <div class="text-xs font-medium text-slate-500 uppercase tracking-wider">{{ t('hero.download_mac') }}</div>
-                    <div class="leading-none text-indigo-600">v2.2.1 (DMG)</div>
+                    <div class="leading-none text-indigo-600">v2.2.2 (DMG)</div>
                 </div>
             </a>
             
@@ -85,7 +85,7 @@ onMounted(() => {
                 <Package class="w-6 h-6 mr-3 text-indigo-400" />
                 <div class="text-left">
                      <div class="text-xs font-medium text-slate-400 uppercase tracking-wider">{{ t('hero.download_portable') }}</div>
-                     <div class="leading-none opacity-80">v2.2.1 (ZIP)</div>
+                     <div class="leading-none opacity-80">v2.2.2 (ZIP)</div>
                 </div>
             </a>
         </div>
