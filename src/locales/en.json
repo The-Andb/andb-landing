@@ -6,11 +6,11 @@
     "roadmap": "Roadmap"
   },
   "hero": {
-    "version": "v2.2.2 is now live",
-    "opensource": "100% Open Source",
+    "version": "v2.3.0 Ecosystem is live (Core 3.0.0)",
+    "opensource": "100% Free & Open Source",
     "title_line1": "Database Migrations,",
     "title_line2": "Reimagined.",
-    "subtitle": "No need for CLI commands. See, compare, and sync your database schemas easily.",
+    "subtitle": "The intelligent bridge between your database schemas. Visualize, compare, and sync without friction.",
     "download_mac": "MacOS Installer",
     "download_portable": "Portable",
     "setup_guide": "First time using The Andb?",
@@ -61,11 +61,11 @@
     "verified": "Verified by Engineering Team: Jan 2026"
   },
   "arch": {
-    "title": "Designed for Reliability",
-    "subtitle": "Modular design. Fast. Reliable.",
-    "core_desc": "The brain. It handles connections, comparison, and script generation. Works everywhere.",
-    "cli_desc": "For automation. Great for CI/CD pipelines.",
-    "gui_desc": "For humans. Beautiful, fast, and easy to use."
+    "title": "The Inseparable Trinity",
+    "subtitle": "Core, CLI, and UI work in perfect harmony. One single source of truth, three ways to interact.",
+    "core_desc": "The Engine. Handles the atomic logic, deep-diffing, and secure connections. The brain of the ecosystem.",
+    "cli_desc": "The Automation. Orchestrate migrations and exports via terminal or CI/CD pipelines with high efficiency.",
+    "gui_desc": "The Intuition. A premium desktop interface for visual exploration and human-centric schema synchronization."
   },
   "guide": {
     "setup_link": "First time using The Andb?",
@@ -85,29 +85,29 @@
     "creator_badge": "Creator",
     "role": "Back-end Developer",
     "vision_label": "The Vision",
-    "quote_start": "\"Every deployment feels risky.",
-    "quote_highlight": "I wanted to change that.",
-    "p1_start": "After years as a backend developer, I kept hitting the same wall:",
-    "p1_highlight": "databases are hard to version.",
-    "p1_end": "Manually comparing schemas, missing columns, changed data types, silent production breaks... the risks only grow as your project evolves.",
-    "p2_start": "I realized that while code has Git and CI/CD, the database side was still manual and fragile. I asked myself:",
-    "p2_quote": "\"Can I build a version control tool for DDL, like Git does for code?\"",
-    "p3_start": "What started as a small CLI tool to solve my own pains has evolved into",
-    "p3_end": "It’s a developer-first tool built to restore trust and visibility in your migrations.",
+    "quote_start": "\"Manual migrations are the last frontier of technical debt.",
+    "quote_highlight": "We're here to bridge that gap.",
+    "p1_start": "After years in the trenches, I realized there was a missing link:",
+    "p1_highlight": "the database is always a step behind.",
+    "p1_end": "Manually tracing schema changes is prone to human error and production catastrophes. As systems scale, the risks grow exponentially.",
+    "p2_start": "The Andb was born from a radical philosophy: 'Deep before Wide'. Before we expand to every database, we must master one. I asked myself:",
+    "p2_quote": "\"Can we bring the rigor of Git to the database layer?\"",
+    "p3_start": "@the-andb/core is now maturing into",
+    "p3_end": "the industry-standard orchestration engine. It restores absolute trust and visibility to your DDL management.",
     "milestone_note": "2025 Milestone — From CLI only to a Solid UI"
   },
   "journey": {
     "title": "The Journey",
     "subtitle": "From a frustrated backend developer's idea to a complete ecosystem.",
-    "m1_date": "Mid 2025",
-    "m1_title": "The \"Solid UI\" Evolution",
-    "m1_desc": "Moving beyond the CLI. Developed a high-performance desktop interface with SQLite-backed metadata storage, Master Password protection, and real-time schema visualization.",
-    "m2_date": "Early 2025",
-    "m2_title": "andb-core: Atomic Logic",
-    "m2_desc": "The first working prototype. Built the atomic comparison engine and DDL export logic in Node.js. Focus was 100% on stability.",
+    "m1_date": "Early 2026",
+    "m1_title": "The Orchestrator Era",
+    "m1_desc": "Transitioning from a personal tool to a commercial-grade ecosystem. Rebranding to @the-andb and implementing the 'Deep Strategy' for MySQL Mastery.",
+    "m2_date": "Mid 2025",
+    "m2_title": "Crossing the GUI Chasm",
+    "m2_desc": "Beyond the CLI. Developed a high-performance desktop interface with dynamic visualization, real-time diffing, and premium aesthetics.",
     "m3_date": "Late 2024",
     "m3_title": "The Inspiration",
-    "m3_desc": "After one too many broken production deployments due to schema mismatches, the idea was born:",
-    "m3_quote": "Code has Git. Why doesn't the database?"
+    "m3_desc": "After one too many data-loss incidents caused by schema mismatches, the question was born: 'If code has Git, why doesn't the database?'",
+    "m3_quote": "Deep before Wide. Precision is the focus."
   }
 }

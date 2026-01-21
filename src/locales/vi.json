@@ -6,11 +6,11 @@
     "roadmap": "Lộ trình"
   },
   "hero": {
-    "version": "v2.2.2 đã sẵn sàng",
-    "opensource": "Mã nguồn mở 100%",
+    "version": "Hệ sinh thái v2.3.0 (Core 3.0.0) đã ra mắt",
+    "opensource": "100% Miễn phí & Mã nguồn mở",
     "title_line1": "Database Migrations,",
     "title_line2": "Tái định nghĩa.",
-    "subtitle": "Không cần gõ lệnh. Xem, so sánh và đồng bộ database dễ dàng.",
+    "subtitle": "Cầu nối thông minh giữa các database schema. Trực quan hóa, so sánh và đồng bộ không chút rào cản.",
     "download_mac": "Tải cho MacOS",
     "download_portable": "Bản Portable",
     "setup_guide": "Lần đầu sử dụng The Andb?",
@@ -61,11 +61,11 @@
     "verified": "Xác nhận bởi Engineering Team: Th1 2026"
   },
   "arch": {
-    "title": "Thiết kế để tin cậy",
-    "subtitle": "Modular. Nhanh. Ổn định.",
-    "core_desc": "Bộ não trung tâm. Xử lý kết nối, so sánh và sinh script. Chạy ở mọi nơi.",
-    "cli_desc": "Tự động hóa. Tuyệt vời cho CI/CD.",
-    "gui_desc": "Cho con người. Đẹp, nhanh và dễ dùng."
+    "title": "Bộ Ba Bất Biến",
+    "subtitle": "Core, CLI và UI hoạt động trong sự hòa quyện hoàn hảo. Một nguồn dữ liệu duy nhất, ba cách để tương tác.",
+    "core_desc": "Bộ lõi (Engine). Xử lý logic nguyên tử, so sánh sâu và kết nối bảo mật. Bộ não của toàn bộ hệ sinh thái.",
+    "cli_desc": "Sự Tự Động. Điều phối các bản migration và export thông qua terminal hoặc CI/CD pipeline với hiệu suất cực cao.",
+    "gui_desc": "Sự Trực Giác. Giao diện desktop cao cấp dành cho việc khám phá và đồng bộ schema tập trung vào trải nghiệm người dùng."
   },
   "guide": {
     "setup_link": "Lần đầu dùng The Andb?",
@@ -85,29 +85,29 @@
     "creator_badge": "Creator",
     "role": "Lập trình viên Backend",
     "vision_label": "Tầm nhìn",
-    "quote_start": "\"Mỗi khi deploy đều thấy run.",
-    "quote_highlight": "Tôi muốn thay đổi điều đó.",
-    "p1_start": "Sau nhiều năm làm backend, tôi cứ đụng phải một bức tường:",
-    "p1_highlight": "database rất khó quản lý version.",
-    "p1_end": "So sánh schema thủ công, thiếu cột, sai kiểu dữ liệu, deploy xong lỗi production... rủi ro cứ lớn dần theo dự án.",
-    "p2_start": "Code thì có Git với CI/CD, sao database vẫn cứ thủ công và mỏng manh thế? Tôi tự hỏi:",
-    "p2_quote": "\"Liệu mình có thể build một công cụ version control cho DDL, giống như Git cho code?\"",
-    "p3_start": "Từ một CLI tool nhỏ để giải quyết nỗi đau của chính mình, giờ nó đã thành",
-    "p3_end": "Đây là tool của dev, làm ra để bạn lấy lại niềm tin và sự rõ ràng khi migration.",
-    "milestone_note": "Cột mốc 2025 — Từ CLI lên Giao diện xịn"
+    "quote_start": "\"Migration thủ công là rào cản cuối cùng của nợ kỹ thuật.",
+    "quote_highlight": "Chúng tôi ở đây để xóa bỏ rào cản đó.",
+    "p1_start": "Sau nhiều năm làm việc thực chiến, tôi nhận ra một mắt xích bị thiếu:",
+    "p1_highlight": "database luôn đi chậm hơn một bước.",
+    "p1_end": "Việc theo dõi thay đổi schema thủ công rất dễ gây sai sót và dẫn đến thảm họa production. Khi hệ thống mở rộng, rủi ro sẽ tăng theo cấp số nhân.",
+    "p2_start": "The Andb ra đời từ một triết lý cốt lõi: 'Sâu trước khi Rộng'. Trước khi mở rộng ra mọi loại database, chúng tôi phải làm chủ được một cái. Tôi tự hỏi:",
+    "p2_quote": "\"Liệu chúng ta có thể mang kỷ luật của Git vào tầng cơ sở dữ liệu?\"",
+    "p3_start": "@the-andb/core hiện đang chuyển mình thành",
+    "p3_end": "hệ điều phối database (orchestration engine) tiêu chuẩn công nghiệp. Nó mang lại niềm tin tuyệt đối và sự minh bạch cho việc quản lý DDL.",
+    "milestone_note": "Cột mốc 2025 — Từ CLI lên Giao diện trực quan"
   },
   "journey": {
     "title": "Hành Trình",
     "subtitle": "Từ ý tưởng của một dev backend đến một hệ sinh thái hoàn chỉnh.",
-    "m1_date": "Giữa 2025",
-    "m1_title": "Cuộc cách mạng \"GUI\"",
-    "m1_desc": "Không chỉ còn là CLI. Phát triển giao diện Desktop hiệu năng cao với SQLite, Bảo mật Master Password và Visualization thời gian thực.",
-    "m2_date": "Đầu 2025",
-    "m2_title": "andb-core: Atomic Logic",
-    "m2_desc": "Bản prototype đầu tiên. Xây dựng engine so sánh và export DDL bằng Node.js. Tập trung 100% vào sự ổn định.",
+    "m1_date": "Đầu 2026",
+    "m1_title": "Kỷ nguyên Orchestrator",
+    "m1_desc": "Chuyển mình từ một công cụ cá nhân thành một hệ sinh thái thương mại. Tái định vị thương hiệu thành @the-andb và triển khai chiến lược 'Làm chủ MySQL'.",
+    "m2_date": "Giữa 2025",
+    "m2_title": "Cuộc cách mạng Giao diện",
+    "m2_desc": "Vượt xa khỏi CLI. Phát triển giao diện Desktop hiệu năng cao với trực quan hóa động, so sánh thời gian thực và thẩm mỹ cao cấp.",
     "m3_date": "Cuối 2024",
     "m3_title": "Nguồn cảm hứng",
-    "m3_desc": "Sau quá nhiều lần deploy lỗi do lệch schema, ý tưởng ra đời:",
-    "m3_quote": "Code có Git. Sao Database lại không?"
+    "m3_desc": "Sau quá nhiều lần mất dữ liệu do lệch schema, câu hỏi đã được đặt ra: 'Nếu code có Git, sao Database lại không?'",
+    "m3_quote": "Sâu trước khi Rộng. Sự chính xác là trọng tâm."
   }
 }
