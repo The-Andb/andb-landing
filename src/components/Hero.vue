@@ -1,124 +1,86 @@
-<script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-import { Apple, Package } from 'lucide-vue-next'
-import { onMounted, ref } from 'vue'
-import Lenis from 'lenis'
-
-const { t } = useI18n()
-const heroRef = ref<HTMLElement | null>(null)
-
-// Parallax Logic using Lenis Scroll
-onMounted(() => {
-  const lenis = new Lenis()
-
-  function raf(time: number) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-  }
-  requestAnimationFrame(raf)
-
-  lenis.on('scroll', ({ scroll }: { scroll: number }) => {
-    if (heroRef.value) {
-        // Simple parallax: Move hero content slower than scroll
-        heroRef.value.style.transform = `translateY(${scroll * 0.5}px)`
-        heroRef.value.style.opacity = `${1 - scroll / 700}`
-    }
-    
-    // Parallax background blobs
-    const blobs = document.querySelectorAll('.blob') as NodeListOf<HTMLElement>
-    blobs.forEach((blob, index) => {
-        const speed = index % 2 === 0 ? 0.2 : 0.4
-        blob.style.transform = `translateY(${scroll * speed}px)`
-    })
-  })
-})
-</script>
-
 <template>
-  <div class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-     <!-- Background Blobs (Absolute) -->
-    <div class="blob w-[600px] h-[600px] top-[-150px] left-[-150px] bg-indigo-600/30 animate-pulse opacity-40"></div>
-    <div class="blob w-[500px] h-[500px] bottom-[-100px] right-[-100px] bg-purple-600/30 animate-pulse animation-delay-2000 opacity-40"></div>
-
-    <!-- Hero Content (Parallaxed) -->
-    <div ref="heroRef" class="relative z-10 flex flex-col items-center justify-center text-center px-4 pt-16 pb-20 max-w-5xl mx-auto will-change-transform">
-        
-        <div class="flex flex-row flex-wrap justify-center items-center gap-4 mb-12">
-            <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-sm font-medium backdrop-blur-md shadow-lg shadow-indigo-500/10">
-                <span class="flex h-2.5 w-2.5 rounded-full bg-indigo-400 mr-2.5 animate-ping"></span>
-                {{ t('hero.version') }}
-            </div>
-            <a href="https://github.com/The-Andb/andb" target="_blank"
-                class="inline-flex items-center px-4 py-1.5 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-sm font-medium backdrop-blur-md hover:bg-green-500/20 transition-all shadow-lg shadow-green-500/10 group">
-                <i data-lucide="github" class="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform"></i>
-                {{ t('hero.opensource') }}
-            </a>
-            <a href="https://www.npmjs.com/org/the-andb" target="_blank"
-                class="inline-flex items-center px-4 py-1.5 rounded-full border border-red-500/30 bg-red-500/10 text-red-400 text-sm font-medium backdrop-blur-md hover:bg-red-500/20 transition-all shadow-lg shadow-red-500/10 group">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg" class="w-8 mr-2 opacity-80 group-hover:opacity-100" />
-                Registry
-            </a>
-        </div>
-
-        <!-- Title -->
-        <h1 class="text-5xl md:text-8xl font-black tracking-tight mb-8 leading-tight">
-            <span class="light-text-slate-900 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-b dark:from-white dark:to-slate-400">
-                {{ t('hero.title_line1') }}
-            </span>
-            <br />
-            <span class="text-indigo-600 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600 dark:from-indigo-400 dark:to-purple-500">
-                {{ t('hero.title_line2') }}
-            </span>
-        </h1>
-
-        <p class="max-w-2xl text-xl text-slate-400 light-text-slate-600 mb-12 leading-relaxed font-light">
-            {{ t('hero.subtitle') }}
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-5 w-full max-w-lg mx-auto mb-16">
-            <a href="https://github.com/The-Andb/andb/releases/download/v2.3.0/The-Andb-2.3.0-arm64.dmg" class="group flex-1 flex items-center justify-center px-8 py-4 bg-white text-slate-900 rounded-2xl font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-indigo-500/20 border border-white/20">
-                <Apple class="w-6 h-6 mr-3 fill-current" />
-                <div class="text-left">
-                    <div class="text-xs font-medium text-slate-500 uppercase tracking-wider">{{ t('hero.download_mac') }}</div>
-                    <div class="leading-none text-indigo-600">v2.3.0 (DMG)</div>
-                </div>
-            </a>
-            
-            <a href="https://github.com/The-Andb/andb/releases/download/v2.3.0/The-Andb-2.3.0-mac.zip" class="group flex-1 flex items-center justify-center px-8 py-4 glass-card text-white rounded-2xl font-bold text-lg hover:scale-105 transition-all">
-                <Package class="w-6 h-6 mr-3 text-indigo-400" />
-                <div class="text-left">
-                     <div class="text-xs font-medium text-slate-400 uppercase tracking-wider">{{ t('hero.download_portable') }}</div>
-                     <div class="leading-none opacity-80">v2.3.0 (ZIP)</div>
-                </div>
-            </a>
-        </div>
-        
-        <div class="text-xs text-slate-500 opacity-60">
-             {{ t('hero.os_req') }}
-        </div>
+  <section class="relative pt-32 pb-16 lg:pt-48 lg:pb-24">
+    <!-- Back Glow -->
+    <div class="absolute inset-0 z-[-1] overflow-hidden">
+      <div class="absolute top-[20%] left-[50%] -translate-x-1/2 w-[800px] h-[500px] bg-blue-500/10 rounded-full blur-[120px]"></div>
     </div>
-  </div>
+
+    <div class="container mx-auto px-4 text-center z-10">
+      <!-- Badge -->
+      <a href="#github" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-blue-400 hover:bg-white/10 transition mb-8 animate-fade-in-up">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+        </span>
+        v3.0.0 Public Beta is Live
+      </a>
+
+      <!-- Headline -->
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 animate-fade-in-up delay-100">
+        Stop Guessing. <br class="hidden md:block" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Start Orchestrating.</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up delay-200">
+        The intelligent database client that compares, syncs, and safeguards your schemas across environments.
+        <span class="text-white font-medium block mt-2">Local-first & privacy-focused.</span>
+      </p>
+
+      <!-- CTA Group -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-300">
+        <button class="px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold shadow-lg shadow-blue-500/25 transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          Download for macOS (Silicon)
+        </button>
+        <button class="px-8 py-3.5 bg-white/5 hover:bg-white/10 text-gray-300 border border-white/10 rounded-lg font-medium transition-all hover:text-white flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.42 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+          Star on GitHub
+        </button>
+      </div>
+
+      <!-- App Preview (Floating) -->
+      <div class="mt-20 relative max-w-5xl mx-auto rounded-xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-2xl animate-float">
+        <!-- Window Controls -->
+        <div class="absolute top-0 left-0 right-0 h-10 bg-white/5 border-b border-white/5 rounded-t-xl flex items-center px-4 space-x-2">
+          <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+          <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+        </div>
+        <!-- Placeholder for Screenshot -->
+        <div class="aspect-video bg-gradient-to-br from-gray-900 to-black rounded-b-xl flex items-center justify-center pt-10 overflow-hidden">
+           <!-- Ideally, use generate_image to create a mockup and place it here -->
+           <div class="text-white/20 font-mono text-sm">[ Application UI Screenshot Placeholder ]</div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
-<style>
-:global(body.light-mode) .light-text-slate-900 {
-  color: #0f172a !important;
-  background: none !important;
-  -webkit-text-fill-color: initial !important;
-}
+<script setup lang="ts">
+import { useMotion } from '@vueuse/motion'
+// Animation logic can be added here
+</script>
 
-:global(body.light-mode) .light-text-slate-600 {
-  color: #334155 !important; /* slate-700 */
+<style scoped>
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
-
-:global(body.light-mode) .glass-card {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
 }
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
 
-:global(body.light-mode) .bg-slate-900\/50 {
-  background-color: rgba(248, 250, 252, 0.8) !important; /* slate-50 */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>

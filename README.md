@@ -1,5 +1,12 @@
-# Vue 3 + TypeScript + Vite
+# The Andb Landing Page
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Marketing website for [The Andb](https://andb.dev).
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## 📄 License
+
+**The Andb Public License (APL-1.0)**
+
+- ✅ **Source-Available**: View, Clone, Run locally for evaluation.
+- ❌ **No Commercial Use**: Production, SaaS, Redistribution are prohibited without a license.
+
+See [LICENSE](../LICENSE) for full terms.

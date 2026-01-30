@@ -1,41 +1,42 @@
-<script setup lang="ts">
-import { Github, Twitter } from 'lucide-vue-next'
-
-const curYear = new Date().getFullYear()
-</script>
-
 <template>
-  <footer class="py-12 border-t border-white/5 bg-slate-900/50 relative z-10 w-full">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-      
-      <!-- Brand -->
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center p-1.5">
-          <img src="/favicon.png" alt="Logo" class="w-full h-full object-contain">
-        </div>
-        <div class="text-sm text-slate-400">
-          <span class="font-bold text-white light-text-slate-900">The Andb</span>
-          <span class="mx-2">•</span>
-          © {{ curYear }} Ph4n4n
-        </div>
+  <footer class="py-12 border-t border-white/5 bg-andb-panel">
+    <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="col-span-2 md:col-span-1">
+        <h3 class="font-bold text-lg mb-4 text-white">The Andb</h3>
+        <p class="text-gray-400 text-sm">
+          Intelligent Database Orchestrator. <br />
+          Built by <a href="#" class="text-blue-400 hover:underline">@PhanAn</a>.
+        </p>
       </div>
 
-      <!-- Links -->
-      <div class="flex items-center gap-6 text-sm text-slate-500">
-        <a href="https://github.com/The-Andb/andb" class="hover:text-white transition-colors flex items-center gap-2">
-          <Github class="w-4 h-4" /> GitHub
-        </a>
-        <a href="https://twitter.com/ph4n4n" class="hover:text-white transition-colors flex items-center gap-2">
-          <Twitter class="w-4 h-4" /> Twitter
-        </a>
+      <div>
+        <h4 class="font-semibold text-gray-300 mb-4 text-sm uppercase tracking-wider">Product</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="#" class="hover:text-blue-400 transition-colors">Download</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition-colors">Changelog</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition-colors">Features</a></li>
+        </ul>
       </div>
 
+      <div>
+        <h4 class="font-semibold text-gray-300 mb-4 text-sm uppercase tracking-wider">Resources</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="#" class="hover:text-blue-400 transition-colors">Documentation</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition-colors">GitHub Issues</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition-colors">Roadmap</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-300 mb-4 text-sm uppercase tracking-wider">Legal</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="#" class="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container mx-auto px-4 mt-12 pt-8 border-t border-white/5 text-center text-gray-500 text-sm">
+      &copy; {{ new Date().getFullYear() }} The Andb. Made with ❤️ and lots of coffee.
     </div>
   </footer>
 </template>
-
-<style scoped>
-:global(body.light-mode) .light-text-slate-900 {
-  @apply text-slate-900;
-}
-</style>

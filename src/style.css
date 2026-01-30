@@ -1,47 +1,52 @@
+/* src/style.css - Core Design Tokens */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family:
-    "Inter",
-    system-ui,
-    -apple-system,
-    sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: light dark;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --accent-glow: rgba(59, 130, 246, 0.5);
+  --success-glow: rgba(16, 185, 129, 0.2);
 }
 
 body {
-  @apply bg-slate-900 text-slate-100 antialiased overflow-x-hidden transition-colors duration-500;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-body.light-mode {
-  @apply bg-slate-50 text-slate-900;
+/* Glassmorphism Utility */
+.glass-panel {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Base custom styles copied from old index.html */
-.blob {
-  position: absolute;
-  filter: blur(80px);
-  border-radius: 50%;
-  z-index: 0;
-  transition: opacity 0.5s;
+/* Gradient Text */
+.text-gradient {
+  background: linear-gradient(to right, #ffffff, #a1a1aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.glass-card {
-  @apply bg-slate-800/70 backdrop-blur-md border border-white/10 shadow-sm transition-colors duration-300;
+.text-gradient-blue {
+  background: linear-gradient(to right, #60a5fa, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-body.light-mode .glass-card {
-  @apply bg-white/70 border-black/5 text-slate-900;
-}
-
-/* Mermaid adjustments */
-.mermaid svg {
-  width: 100% !important;
-  height: auto !important;
-  max-width: 100% !important;
-  min-height: 500px;
+/* Subtle Grid Background */
+.bg-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
