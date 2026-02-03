@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import NavBar from './components/NavBar.vue'
 import Hero from './components/Hero.vue'
+import Showcase from './components/Showcase.vue'
 import Features from './components/Features.vue'
 import TrustMetrics from './components/TrustMetrics.vue'
 import Comparisons from './components/Comparisons.vue'
@@ -22,6 +23,7 @@ import Footer from './components/Footer.vue'
 
     <main class="space-y-32 pb-32">
       <Hero />
+      <Showcase />
       <TrustMetrics />
       <Comparisons />
       <Features />
