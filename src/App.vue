@@ -2,6 +2,7 @@
 import NavBar from './components/NavBar.vue'
 import Hero from './components/Hero.vue'
 import Showcase from './components/Showcase.vue'
+import SetupDemo from './components/SetupDemo.vue'
 import Features from './components/Features.vue'
 import TrustMetrics from './components/TrustMetrics.vue'
 import Comparisons from './components/Comparisons.vue'
@@ -24,6 +25,7 @@ import Footer from './components/Footer.vue'
     <main class="space-y-32 pb-32">
       <Hero />
       <Showcase />
+      <SetupDemo />
       <TrustMetrics />
       <Comparisons />
       <Features />
